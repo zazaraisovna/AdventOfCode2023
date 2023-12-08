@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day1_1", "Adve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day1_2", "..\AdventOfCode_Day1_2\AdventOfCode_Day1_2.csproj", "{243B7190-40E8-405D-ABEE-7DA4AFA6EE01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode_Day2_1", "..\AdventOfCode_Day2_1\AdventOfCode_Day2_1.csproj", "{DA4DFB88-46F0-468C-B375-8531D0D2E654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day2_1", "..\AdventOfCode_Day2_1\AdventOfCode_Day2_1.csproj", "{DA4DFB88-46F0-468C-B375-8531D0D2E654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode_Day2_2", "..\AdventOfCode_Day2_2\AdventOfCode_Day2_2.csproj", "{233A4809-0956-48A9-A73C-8E67EFE2DDA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day2_2", "..\AdventOfCode_Day2_2\AdventOfCode_Day2_2.csproj", "{233A4809-0956-48A9-A73C-8E67EFE2DDA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode_Day3_1", "..\AdventOfCode_Day3_1\AdventOfCode_Day3_1.csproj", "{34DF6788-35E0-452E-9C6F-2E1E3861DCF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day3_1", "..\AdventOfCode_Day3_1\AdventOfCode_Day3_1.csproj", "{34DF6788-35E0-452E-9C6F-2E1E3861DCF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode_Day4_1", "..\AdventOfCode_Day4_1\AdventOfCode_Day4_1.csproj", "{F5FE3A78-80AA-443F-8BBB-0D6EEC328DA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{34DF6788-35E0-452E-9C6F-2E1E3861DCF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34DF6788-35E0-452E-9C6F-2E1E3861DCF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34DF6788-35E0-452E-9C6F-2E1E3861DCF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5FE3A78-80AA-443F-8BBB-0D6EEC328DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5FE3A78-80AA-443F-8BBB-0D6EEC328DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5FE3A78-80AA-443F-8BBB-0D6EEC328DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5FE3A78-80AA-443F-8BBB-0D6EEC328DA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

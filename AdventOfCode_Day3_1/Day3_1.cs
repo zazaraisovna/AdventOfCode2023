@@ -4,52 +4,53 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string[] lines = File.ReadAllLines("input.txt");
-        int n = lines[0].Length;
-        int m = lines[1].Length - 1;
-        Console.WriteLine("n = " + n);
-        Console.WriteLine("m = " + m);
-        char[,] arr = new char[lines[0].Length - 1, lines.Length];
-        bool cypher = false;
-        for (int i = 0; i < lines[0].Length - 1; i++)
-        {
-            List<int> number = new List<int>();
-            for (int j = 0; j < lines.Length; j++)
+        string[] lines = File.ReadAllLines("input_.txt");
+
+            int sum = 0;
+
+            for (int i = 0; i < lines.Length; i++)
             {
-                arr[i, j] = lines[i][j];
-                if (char.IsDigit(arr[i, j]))
+                for (int j = 0; j < lines[i].Length; j++)
                 {
-                    number.Add(arr[i, j]);
-                    cypher = isCypher(arr, i, j, n, m);
+                    char currentChar = lines[i][j];
+
+                    // Check if the current character is a digit and adjacent to a symbol
+                    if (char.IsDigit(currentChar) && isCypher(lines, i, j))
+                    {
+                        // Add the part number to the sum
+                        sum += int.Parse(currentChar.ToString());
+                    }
                 }
-               // else
-                //    number.RemoveAll();
-                Console.Write(arr[i, j]);
             }
-            Console.WriteLine();
-        }
 
-        int sum = 0;
-        foreach (string line in lines)
-        {
 
-        }
-        Console.WriteLine();
+        Console.WriteLine(sum);
         Console.ReadLine();
     }
 
-    private static bool isCypher(char[,] arr, int i, int j, int n, int m)
+    private static bool isCypher(string[] lines, int row, int col/*char[,] arr, int i, int j, int n, int m*/)
     {
-        bool cypher = false;
-        cypher = (i > 0) && (j > 0) && (arr[i - 1, j - 1] != '.') && !char.IsDigit(arr[i - 1, j - 1]);
-        cypher = (i > 0) && (arr[i - 1, j] != '.') && !char.IsDigit(arr[i - 1, j]) && !cypher;
-        cypher = (j > 0) && (arr[i, j - 1] != '.') && !char.IsDigit(arr[i, j - 1]) && !cypher;
-        cypher = (i < n) && (j > 0) && (arr[i + 1, j - 1] != '.') && !char.IsDigit(arr[i + 1, j - 1]) && !cypher;
-        cypher = (i < n) && (arr[i + 1, j] != '.') && !char.IsDigit(arr[i + 1, j]) && !cypher;
-        if((i > 0) && (j < m))
-            cypher = ((arr[i - 1, j + 1] != '.') && !char.IsDigit(arr[i - 1, j + 1]) && !cypher);
-        cypher = (j < m) && (arr[i, j + 1] != '.') && !char.IsDigit(arr[i, j + 1]) && !cypher;
-        cypher = (i < n) && (j < m) && (arr[i + 1, j + 1] != '.') && !char.IsDigit(arr[i + 1, j + 1]) && !cypher;
-        return cypher;
+        // Check in all eight directions for symbols
+        int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
+        int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
+
+        for (int i = 0; i < 8; i++)
+        {
+            int newRow = row + dx[i];
+            int newCol = col + dy[i];
+
+            // Check if the new position is within the bounds of the array
+            if (newRow >= 0 && newRow < lines.Length && newCol >= 0 && newCol < lines[newRow].Length)
+            {
+                // Check if the character at the new position is a symbol
+                if (lines[newRow][newCol] == '*' || lines[newRow][newCol] == '#' || lines[newRow][newCol] == '+'
+                    || lines[newRow][newCol] == '$')
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
